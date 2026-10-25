@@ -76,36 +76,18 @@ The harmonic mean of Precision and Recall. It provides a single benchmark score 
 
 ## Analysis & Results
 
-In addition to standard training, the project includes deep analytical evaluations:
+In addition to standard training, the project includes deep analytical evaluations. *(Note: High-resolution visual results and metric tables are uploaded directly to this repository as image files).*
 
 ### Ablation Study
 The baseline imbalanced model achieved an F1-Score of 80.07%. By introducing the proposed Target-Aware Oversampling, the F1-Score jumped to **90.55%** (an absolute improvement of +10.48%). 
-
-<p align="center">
-  <img src="table1_ablation_fixed.png" alt="Ablation Study" width="75%">
-</p>
 
 ### Class-Wise Performance
 The class-wise breakdown proves that the oversampling strategy successfully removed the model's bias. Rare and vulnerable classes showed massive safety improvements:
 - **Pedestrians:** 95.10% Recall
 - **Buses:** 95.80% Recall
 
-<p align="center">
-  <img src="table2_classwise_fixed.png" alt="Class Wise Results" width="75%">
-</p>
-
 ### Qualitative Visualization (200-Frame Gap)
-To ensure the model didn't just overfit to consecutive frames, a Smart Ranking Algorithm enforced a strict minimum gap of 200 frames between test scenes. Ground Truth boxes are displayed in Green, and Model Predictions in Red.
-
-*Fog Sequence Evaluation:*
-<p align="center">
-  <img src="fig2_fog_visualizations_rich.png" alt="Fog Visualizations" width="100%">
-</p>
-
-*Snow Sequence Evaluation:*
-<p align="center">
-  <img src="fig3_snow_visualizations_gap_enforced.png" alt="Snow Visualizations" width="100%">
-</p>
+To ensure the model didn't just overfit to consecutive frames, a Smart Ranking Algorithm enforced a strict minimum gap of 200 frames between test scenes. Ground Truth boxes are displayed in Green, and Model Predictions in Red. Both Fog and Snow multi-object tracking sequences were successfully verified using this strict gap methodology.
 
 ## Project Workflow
 
